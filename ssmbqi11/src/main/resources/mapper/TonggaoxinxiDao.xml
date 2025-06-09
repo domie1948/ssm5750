@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TonggaoxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TonggaoxinxiEntity" id="tonggaoxinxiMap">
+        <result property="gonggaobiaoti" column="gonggaobiaoti"/>
+        <result property="gonggaoleixing" column="gonggaoleixing"/>
+        <result property="faburen" column="faburen"/>
+        <result property="gonggaoneirong" column="gonggaoneirong"/>
+        <result property="fabushijian" column="fabushijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TonggaoxinxiVO" >
+		SELECT * FROM tonggaoxinxi  tonggaoxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TonggaoxinxiVO" >
+		SELECT  tonggaoxinxi.* FROM tonggaoxinxi  tonggaoxinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TonggaoxinxiView" >
+
+		SELECT  tonggaoxinxi.* FROM tonggaoxinxi  tonggaoxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TonggaoxinxiView" >
+		SELECT * FROM tonggaoxinxi  tonggaoxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
